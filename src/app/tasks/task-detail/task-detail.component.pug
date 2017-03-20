@@ -1,0 +1,39 @@
+
+
+
+.taskDetail
+  .layout
+    .layout__column_70
+      tasks-steps.steps([task]="task")
+
+      tasks-awareness(*ngIf="task.status === 'awareness' || task.status === 'awarenessApprove'", [task]="task", [user]="user")
+      tasks-price(*ngIf="task.status === 'price' || task.status === 'priceApprove'")([task]="task", [user]="user", [clientRate]="(client | async)?.rate")
+      tasks-upload-concept.tasks-upload-concept(*ngIf="task.status === 'concept' || task.status === 'conceptApprove' || task.status === 'design' || task.status === 'designApprove'")([task]="task")
+
+      //tasks-upload-design(*ngIf="'")([task]="task")
+
+      task-sources(*ngIf="task.status === 'sources' || task.status === 'sourcesApprove'")([task] = "task")
+      .taskRejected(*ngIf="task.status === 'reject'")
+          h1.h2 Задача отменена
+
+
+
+    .layout__column_30
+      .user
+        .userpic
+          img(src="{{ (client | async)?.photoUrl }}")
+        .name {{ (client | async)?.firstName }}
+        .company {{ (client | async)?.company }}
+      ul.contacts
+        li
+            i.glyphicon.glyphicon-earphone
+            | {{ (client | async)?.phone }}
+        li((click)="cancelTask(task)")
+            i.glyphicon.glyphicon-send
+            | Отменить заказ
+            .bullet(*ngIf="ureadMessages === true")
+      tasks-chat.chat([task]="task", [client]="client", [user]="user", [hidden]="chathidden === true")
+
+
+
+

@@ -1,0 +1,24 @@
+
+
+
+
+.priceForm(*ngIf = "task.status === 'price'", [hidden]='task.time > 0 ')
+  .count
+    h1.h1 Оцените задачу
+    .sliderZone
+      p-slider([(ngModel)]='time', [style]="{'width':'200px'}", [min]="0", [max]="11", [step]="1", (onChange)="showPrice()")
+    .val
+      p Примерные трудозатраты в часах: {{ time }}
+      //p {{ stage }}
+    //.priceContainer([hidden]="time === 0")
+    //  div Сумма, которую покажем клиенту
+    //  span.price(*ngIf="time <= 10") ~ {{ price }} рублей
+    //  span(*ngIf="time > 10") Стоимость назовет наставник
+    button.btn.btn_m.btn_paper((click)="sendPrice(time, task.taskId)", *ngIf="time > 0") Отправить
+.priceWait(*ngIf = "task.status === 'priceApprove' || task.time > 0 ")
+  h2.h2.priceWait__h2 Согласовываем оценку с клиентом
+
+  div(*ngIf="tempClient && task.status === 'priceApprove'") Отправьте это сообщение клиенту
+    .messageToClient
+      p Стоимость работ {{ task.price }} рублей. Если цена вам подходит, то оплатите картой по ссылке ниже, и задача пойдет в работу
+      span {{ payLink }}

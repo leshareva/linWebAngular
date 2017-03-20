@@ -1,0 +1,60 @@
+<div class="layout">
+    <div *ngIf="tasks.length === 0" class="emptyTasks">
+        <h1>У вас пока нет задач</h1>
+        <div class="newTaskArea">
+            <div *ngIf="" class="subtitle">Новая задача появится  тут</div>
+            <!-- accordion with arrows -->
+            <accordion [showArrows]="true">
+                <accordion-group *ngFor="let newTask of newTasks; let i = index" heading="Новая задача" class="accordionCard">
+                    <p>{{ newTask.text }}</p>
+                    <div *ngIf="newTask.attach" class="layout newTask__layout">
+                        <div class="thumb" *ngFor="let image of newTask.attach">
+                            <img  src="{{ image }}" width="100%"/>
+                        </div>
+                    </div>
+                    <div class="layout">
+                        <button (click)="acceptTask(newTask, i)" class="btn btn_s btn_normal">Взять задачу</button>
+                        <a (click)="skipTask(newTask, i)">Пропустить</a>
+                    </div>
+
+
+                </accordion-group>
+            </accordion>
+
+        </div>
+    </div>
+
+
+
+    <div *ngIf="tasks.length > 0" class="taskList">
+        <accordion [showArrows]="true">
+            <accordion-group *ngFor="let newTask of newTasks; let i = index" heading="Новая задача" class="accordionCard">
+                <div>{{ newTask.text }}</div>
+                <div *ngIf="newTask.attach" class="layout newTask__layout">
+                    <div class="thumb" *ngFor="let image of newTask.attach">
+                        <img  src="{{ image }}" width="100%"/>
+                    </div>
+                </div>
+                <div class="layout">
+                    <button (click)="acceptTask(newTask, i)" class="btn btn_s btn_normal">Взять задачу</button>
+                    <a (click)="skipTask(newTask, i)">Пропустить</a>
+                </div>
+            </accordion-group>
+        </accordion>
+        <ul>
+            <li *ngFor="let task of tasks" (click)="onSelect(task)" [class.selected]="task === selectedTask" class="taskCard">
+                <div class="taskTitle">{{ task.text }}</div>
+                <div *ngIf="task.unread" class="bullet"></div>
+            </li>
+        </ul>
+        <!--<div (click)="openArchive()" class="archive">Закрытые задачи</div>-->
+    </div>
+
+
+
+    <div *ngIf="tasks.length > 0" class="taskView">
+        <div [hidden]="detailVisible === true" class="noSelect">Выберите задачу из списка</div>
+        <tasks-task-detail *ngIf="detailVisible === true" [user]="user" [task]="selectedTask"></tasks-task-detail>
+    </div>
+</div>
+

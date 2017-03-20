@@ -1,0 +1,8 @@
+ul
+  li([class.active]="task.status === 'awareness' || task.status === 'awarenessApprove' || task.status === 'price' || task.status === 'priceApprove'") Понимание задачи
+  li([class.active]="task.status === 'concept' || task.status === 'conceptApprove' ") Черновик
+  li([class.active]="task.status === 'design' || task.status === 'designApprove' ") Чистовик
+  li([class.active]="task.status === 'sources' || task.status === 'sourcesApprove' ") Исходник
+
+//h1.h1 {{ title }}
+//.subtitle {{ subtitle }}

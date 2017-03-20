@@ -1,0 +1,57 @@
+.awareness {
+  margin: 0 4%; }
+
+.advice {
+  text-align: center;
+  padding: 4px 4px;
+  margin-bottom: 40px; }
+
+.awarenessView {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.awarenessH2 {
+  text-align: center; }
+
+textarea {
+  width: 100%;
+  height: 40vh;
+  font-size: 3vmin;
+  border: 1px solid #ccc;
+  padding: 2%; }
+
+.userpic {
+  width: 8vmin;
+  height: 8vmin;
+  border-radius: 50%;
+  overflow: hidden; }
+
+.awarenesText {
+  background-color: white;
+  margin-left: 1.5vw;
+  width: 65vmin;
+  padding-bottom: 4%; }
+
+.userpic img {
+  width: 100%; }
+
+.text {
+  font-size: 2.5vmin;
+  margin-bottom: 2vh;
+  margin-left: 4%; }
+
+.editLink {
+  color: #949494;
+  font-size: 2vmin;
+  border-bottom: 1px solid #949494;
+  margin-left: 4%; }
+
+.status {
+  padding: 2%;
+  background-color: #e5f5fa;
+  font-size: 2vmin;
+  color: #4d7999;
+  margin-bottom: 4%; }
+
+/*# sourceMappingURL=awareness.component.css.map */

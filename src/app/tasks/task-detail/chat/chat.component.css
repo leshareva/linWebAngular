@@ -1,0 +1,84 @@
+.chatRoom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  overflow: auto;
+  height: 50vh;
+  vertical-align: bottom;
+  background-color: white; }
+
+.chatRoom li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px; }
+
+.img {
+  width: 200px; }
+
+.img img {
+  width: 100%; }
+
+.userpic {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-left: 20px;
+  margin-right: 10px; }
+
+.userpic img {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.name {
+  font-size: 14px;
+  color: cornflowerblue; }
+
+.sendForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  background-color: white;
+  height: 15vh; }
+
+.textField {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  background: transparent;
+  margin-bottom: 2vh;
+  font-size: 14px;
+  margin-left: 4%;
+  margin-right: 4%; }
+
+.uploadImage {
+  -webkit-box-flex: 3;
+      -ms-flex: 3 auto;
+          flex: 3 auto;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1; }
+
+.sendBtn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  font-size: 16px;
+  color: #949494;
+  margin-right: 10px; }
+
+/*# sourceMappingURL=chat.component.css.map */

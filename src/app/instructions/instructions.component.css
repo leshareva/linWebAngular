@@ -1,0 +1,20 @@
+.instruction {
+  max-width: 700px;
+  padding-top: 40px;
+  padding-left: 80px; }
+
+.instruction p {
+  font-size: 20px;
+  margin-bottom: 20px; }
+
+.tip {
+  background-color: #f0f0f0;
+  padding: 10px 20px 30px 20px;
+  max-width: 300px;
+  margin-top: 80px; }
+
+.tip__h3 {
+  font-size: 18px;
+  font-weight: bold; }
+
+/*# sourceMappingURL=instructions.component.css.map */

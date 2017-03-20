@@ -1,0 +1,54 @@
+<div class="select">
+    <div class="layout__column_20 select_left">
+
+        <app-tips [tip]="activeTip" *ngIf="this.hiddenTip === false"></app-tips>
+
+        <div class="lectureList" *ngIf="instructions.length >= 2">
+            <h4 class="h4">Инструкции Лина</h4>
+            <ul>
+                <li *ngFor="let instruction of instructions" (click)="selectLecure(instruction)" [class.selected]="instruction === selectedLecture" >
+                    <div><a>{{ instruction.title }}</a></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="lectureList">
+            <ul *ngIf="lectures.length > 1">
+                <li *ngFor="let lecture of lectures" (click)="selectLecure(lecture)" [class.selected]="lecture === selectedLecture" >
+                    {{ lecture.week + 1 }}&nbsp;
+                    <div><a>{{ lecture.title }}</a></div>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="layout__column_80 select_right" >
+        <h1 class="h1 select__h1">{{ selectedLecture.title }}</h1>
+
+        <div class="layout select__segment" [hidden]="selectedLecture.week === 9">
+            <a class="btn btn_normal btn_lsegment" (click)="showLecture(this.lectures[this.lectures.length - 1])" [class.btn_selected]="homeWorkShow === false" >Статья</a>
+            <a class="btn btn_normal btn_rsegment" (click)="showHomeWork()" [class.btn_selected]="homeWorkShow === true">Задание</a>
+        </div>
+        <div class="lecture" [innerHTML]="selectedLecture.body"  *ngIf="homeWorkShow === false"></div>
+
+        <div class="homeWork" *ngIf="homeWorkShow === true">
+            <div class="workDone" *ngIf="selectedLecture['hwStatus'] === 'done'">
+               Работа сдана
+            </div>
+
+            <div [innerHTML]="selectedLecture.homeWork"></div>
+            <div class="doneForm" *ngIf="selectedLecture['hwStatus'] !== 'done'">
+                <input type="file" class="homeWork__input"  (change)="onChange($event)"/>
+                <button class="btn btn_normal btn_m" (click)="saveHomework()">Сдать работу</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/new-file/new-file.component.sass"],"names":[],"mappings":"AAAA;EACE,iBAAiB;EACjB,mBAAmB;EACnB,aAAa,EAAG;;AAElB;EACE,4BAA4B,EAAG","file":"new-file.component.css","sourcesContent":[".phoneForm {\n  max-width: 500px;\n  position: relative;\n  margin: auto; }\n\n.phoneInput {\n  max-width: 200px !important; }\n"]}

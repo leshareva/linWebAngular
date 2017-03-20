@@ -1,0 +1,53 @@
+
+.signIn
+    form([formGroup]="newUserForm", novalidate='', (ngSubmit)="saveUser(newUserForm.value, newUserForm.valid)")
+        .form-group
+            h2.h2.form-group__h2 Стать Лин-дизайнером
+            .inputFloor
+                label Имя
+                input(type='text', formControlName='firstName')
+                // display error message if name is not valid
+                small.text-danger(*ngIf='!newUserForm.controls.firstName.valid && submitAttempt')
+                    | Нужно заполнить.
+
+            .inputFloor
+                label Фамилия
+                input(type='text', formControlName='lastName')
+                // display error message if name is not valid
+                small.text-danger(*ngIf='!newUserForm.controls.lastName.valid && submitAttempt')
+                    | Нужно заполнить.
+
+            .inputFloor
+                label Город
+                input(type='text', formControlName='city')
+                // display error message if name is not valid
+                small.text-danger(*ngIf='!newUserForm.controls.city.valid && submitAttempt')
+                    | Нужно заполнить.
+
+            .inputFloor
+                label Телефон
+                input(type='number', formControlName='phone')
+                // display error message if name is not valid
+                small.text-danger(*ngIf='!newUserForm.controls.phone.valid && submitAttempt')
+                    | Нужно заполнить.
+
+            .inputFloor
+                label Эл.почта
+                input(type='email', formControlName='email')
+                // display error message if name is not valid
+                small.text-danger(*ngIf='!newUserForm.controls.email.valid && submitAttempt')
+                  | Нужно заполнить.
+            .inputFloor
+                label Пароль
+                input(type='password', formControlName='password', validateEqual="repeat", reverse="true")
+                // display error message if name is not valid
+                small.text-danger(*ngIf='!newUserForm.controls.password.valid')
+                    | Минимум 6 знаков.
+            .inputFloor
+                label Пароль еще раз
+                input(type='password', formControlName='repeat', validateEqual="password", reverse="false")
+                // display error message if name is not valid
+                small.text-danger(*ngIf='!newUserForm.controls.repeat.valid && submitAttempt')
+                    | Нужно заполнить.
+        .submitFloor
+            button.btn.btn_m.btn_normal.sendBtn(type='submit') Начать

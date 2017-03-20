@@ -1,0 +1,20 @@
+.sources
+    h2.h2 {{ title }}
+    .sourcesContainer(*ngIf="uploadFormHidden !== true")
+        form
+            .form-group
+                input.form-control(type='file', name='multiple', (change)='onChange($event)', multiple='', accept=".jpg,.png")
+
+        .willUpload(*ngIf="files.length > 0")
+            h3 Загружаемые файлы
+            ul
+                li(*ngFor="let file of files") {{ file.name }}
+            .layout.layout__title
+                button.btn.btn_s.btn_paper((click)="uploadFile()") Отправить
+                button.btn.btn_s.btn_normal((click)="deleteFile()") Очистить
+    .sourcesApprove(*ngIf="uploadFormHidden !== false")
+        //.status {{ conceptStatus }}
+        .layout
+            .conceptItem(*ngFor="let mokup of ( mokups | async ) ")
+                img(src="{{ mokup.imgUrl }}")
+        button.btn.btn_s.btn_paper((click)="editConcept()") Редактировать

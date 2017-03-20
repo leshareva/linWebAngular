@@ -1,0 +1,34 @@
+.sourcesContainer
+  margin: 0 4% 0 4%
+
+
+.inputfile
+  width: 0.1px
+  height: 20px
+  opacity: 0
+  overflow: hidden
+  position: absolute
+  z-index: -1
+
+.inputfile
+  + label
+    font-size: 1em
+    font-weight: 100
+    color: white
+    background-color: #1f8bff
+    display: inline-block
+    padding: 5px 10px
+    border-radius: 4px
+  &:focus
+    + label
+      background-color: #0c65de
+    + label
+      outline: 1px dotted #000
+      outline: -webkit-focus-ring-color auto 5px
+  + label
+    &:hover
+      background-color: #0c65de
+    cursor: pointer
+  /* "hand" cursor
+  + label *
+    pointer-events: none

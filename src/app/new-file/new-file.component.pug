@@ -1,0 +1,11 @@
+div.phoneForm([hidden]='showDropzone === true')
+    h1 Введите номер телефона хозяина папки
+    .inputFloor.phoneInput
+        input#phone.phoneInput(type='text', #phone='', [(ngModel)]='inputPhone', placeholder='Телефон')
+        .error(*ngIf="errorShow === true") {{ error }}
+    button.btn.btn_m.btn_normal((click)='checkUser(phone.value)') Отправить
+
+div([hidden]='showDropzone === false')
+    form#upload-widget.dropzone(method='post', action='{{ SERVER_URL }}/saveFiles')
+        .fallback
+            input(name='file', type='file')

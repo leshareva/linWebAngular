@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/environment/tips/tips.component.sass"],"names":[],"mappings":"AAAA;EACE,sBAAsB;EACtB,6BAA6B;EAC7B,0BAA0B,EAAG","file":"tips.component.css","sourcesContent":[".select__next {\n  margin: 20px 0 0 20px;\n  padding: 10px 20px 30px 20px;\n  border: 1px solid #cccccc; }\n"]}

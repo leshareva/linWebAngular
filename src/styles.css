@@ -1,0 +1,155 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Arial", sans-serif; }
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #0D47A1;
+  border-bottom: 1px solid #0D47A1; }
+
+input {
+  border: none;
+  border-radius: none; }
+
+a:hover {
+  text-decoration: none;
+  color: #0a1ea1; }
+
+ul {
+  margin: 0px;
+  list-style: none;
+  padding: 0px; }
+
+h1 {
+  font-size: 42px; }
+
+.h1 {
+  font-size: 50px;
+  margin-left: 0;
+  margin-top: 0; }
+
+.h2 {
+  font-size: 24px;
+  margin-left: 0;
+  margin-top: 0; }
+
+.wrapper {
+  height: 100vh; }
+
+.layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.layout__column_20 {
+  width: 20%; }
+
+.layout__column_30 {
+  width: 30%; }
+
+.layout__column_33 {
+  width: 33%; }
+
+.layout__column_40 {
+  width: 40%; }
+
+.layout__column_60 {
+  width: 60%; }
+
+.layout__column_70 {
+  width: 70%; }
+
+.layout__column_80 {
+  width: 80%; }
+
+.layout__column_90 {
+  width: 90%; }
+
+.btn {
+  border: none;
+  cursor: pointer;
+  margin: 0; }
+
+.btn_paper {
+  background-color: #1f8bff;
+  color: white; }
+
+.btn_paper:hover {
+  background-color: #0F78E9; }
+
+.btn_sky {
+  border: none !important;
+  background-color: white;
+  color: #0F78E9 !important; }
+
+.btn_normal {
+  border: 1px solid #D7E3EB;
+  background-color: white;
+  color: black; }
+
+.btn_l {
+  font-size: 32px; }
+
+.btn_m {
+  font-size: 20px;
+  padding: 6px 12px; }
+
+.btn_s {
+  font-size: 16px; }
+
+.btn_selected {
+  background-color: #f0f0f0;
+  color: black;
+  border-color: #dddddd; }
+
+.btn_selected:hover {
+  color: black; }
+
+.btn_lsegment {
+  border-right: none;
+  border-radius: 3px 0px 0px 3px;
+  -moz-border-radius: 3px 0px 0px 3px;
+  -webkit-border-radius: 3px 0px 0px 3px; }
+
+.btn_rsegment {
+  border-radius: 0px 3px 3px 0px;
+  -moz-border-radius: 0px 3px 3px 0px;
+  -webkit-border-radius: 0px 3px 3px 0px; }
+
+.inputFloor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.inputFloor label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
+  width: 10vw; }
+
+.inputFloor input {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 auto;
+          flex: 2 auto;
+  font-size: 16px;
+  padding: 4px;
+  border: 1px solid #cccccc;
+  border-radius: 2px; }
+
+.inputFloor textarea {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 auto;
+          flex: 2 auto;
+  height: 30vh;
+  font-size: 16px;
+  padding: 1px !important; }
+
+/*# sourceMappingURL=styles.css.map */

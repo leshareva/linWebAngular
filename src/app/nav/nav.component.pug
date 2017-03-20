@@ -1,0 +1,24 @@
+.header
+  .logo
+    a.logo_link(href="#")
+      img([src]="logo")
+    a.logo_link(href="#")
+      .logoText
+        | Лин&nbsp;
+        span.addLogo {{ subLogo }}
+  ul.menu
+    li(*ngFor="let item of menu")
+      a(routerLink='{{ item.url }}', routerLinkActive="active", *ngIf='item.disabled === false') {{ item.title }}
+      a(*ngIf='item.disabled === true', class='disabled') {{ item.title }}
+  .user( *ngIf = "user !== null" )
+    .userInfo
+      .name {{ user.firstName }}
+      span.logout((click)="logout()")( *ngIf = "user !== null") Выйти &nbsp;&nbsp;
+      span( *ngIf = "user.rate >= 0.3" ) {{ user.rate }} &nbsp;&nbsp;
+      span(*ngIf = "user.rate >= 0.3") {{ user.sum }} руб
+    .userpic
+      img(src="{{ user.photoUrl }}")
+
+  .signIn( *ngIf = "user === null" )
+      span.btn.btn_s((click) = "login()") Войти
+

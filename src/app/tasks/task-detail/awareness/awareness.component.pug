@@ -1,0 +1,19 @@
+.awareness
+    h2.h2.awarenessH2(*ngIf="task.status === 'awareness'") Разбиритесь в задаче
+    p(*ngIf="task.status === 'awareness'") Позвоните клиенту, согласуйте с ним понимание задачи в телеграме или вотсапе, и когда согласуете с клиентом вставьте его сюда
+
+    .awarenessForm(*ngIf="task.status === 'awareness'")
+        .form
+            simple-tiny([elementId]="'awarenessField'", (onEditorKeyup)="keyupHandlerFunction($event)", [content]="awareness.text")
+            //textarea#awarenessField(placeholder="Текст понимания задачи")([(ngModel)]="awareness.text")
+            button.btn.btn_paper.btn_m((click)="sendAwareness()") Отправить
+
+
+    h2.h2.awarenessH2(*ngIf="task.status === 'awarenessApprove'") Ждем ответа от клиента
+    .awarenessView(*ngIf="task.status === 'awarenessApprove'")
+        .userpic
+            img(src="{{ user.photoUrl }}")
+        .awarenesText
+            .status  {{ awarenessStatus }}
+            .text([innerHTML]="awareness.text")
+            a.editLink((click)="editAwareness()") Редактировать

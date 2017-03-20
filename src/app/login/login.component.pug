@@ -1,0 +1,19 @@
+.wrapper
+    .login
+        h2.h2.login__h2 Войти в Лин
+        form([formGroup]="loginForm", novalidate='', (ngSubmit)='onSubmit(loginForm.value)')
+            .form-group
+                .inputFloor
+                    label.login__label Эл.почта
+                    input(type='text', formControlName='email')
+                    // display error message if name is not valid
+                    span.text-danger(*ngIf='!loginForm.controls.email.valid && submitAttempt')
+                        | Что-то не так с имэйлом
+                .inputFloor
+                    label.login__label Пароль
+                    input(type='password', formControlName='password')
+
+
+            .submitFloor
+                button.btn.btn_normal.btn_m.submitFloor__btn(type='submit', [disabled]='!loginForm.valid') Войти
+                span.text-danger(*ngIf='showError === true') {{ errorText }}

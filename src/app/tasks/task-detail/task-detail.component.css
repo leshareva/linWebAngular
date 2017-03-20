@@ -1,0 +1,52 @@
+.user {
+  background-color: white;
+  padding: 4% 4% 8% 4%; }
+
+.userpic {
+  width: 8vmin;
+  height: 8vmin;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 4%;
+  float: left; }
+
+.userpic img {
+  width: 100%; }
+
+.name {
+  font-size: 3vmin; }
+
+.clientQuote {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-left: 30px;
+  margin-right: 30px; }
+
+tasks-chat {
+  background-color: white; }
+
+.contacts li {
+  cursor: pointer;
+  font-size: 2.5vmin;
+  padding: 3% 4%;
+  background-color: white;
+  border-bottom: 1px solid #ebe3e8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.contacts li i {
+  margin-right: 4%; }
+
+.bullet {
+  background-color: #0D47A1;
+  width: 2vmin;
+  height: 2vmin;
+  border-radius: 50%;
+  position: relative;
+  margin-left: auto; }
+
+/*# sourceMappingURL=task-detail.component.css.map */

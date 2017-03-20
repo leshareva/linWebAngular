@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/app.component.sass"],"names":[],"mappings":"AAAA;EACE,aAAa,EAAG;;AAIlB;EACE,aAAa,EAAG;;AAElB;EACE,eAAe,EAAG","file":"app.component.css","sourcesContent":[".main {\n  height: 84vh; }\n\n\n\n.footer {\n  height: 10vh; }\n\nnav a.active {\n  color: #039be5; }\n"]}

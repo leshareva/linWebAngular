@@ -1,0 +1,20 @@
+.chatRoom
+  ul
+    li(*ngFor="let message of chat")
+      .userpic
+        img(*ngIf="message.fromId !== user.id")(src="{{ (client | async)?.photoUrl }}")
+        img(*ngIf="message.fromId === user.id")(src="{{ user.photoUrl }}")
+      span
+        .name
+          span(*ngIf="message.fromId !== user.id") {{ (client | async)?.firstName }}
+          span(*ngIf="message.fromId === user.id") {{ user.firstName }}
+        .text([hidden]="!message.text") {{ message.text }}
+        .img([hidden]="!message.imageUrl")
+          img(src="{{ message.imageUrl }}")
+.sendForm
+
+  input.textField(placeholder="Текст сообщения")(type="text")([(ngModel)]="messageText")(#something="")((keydown)="keyDownFunction($event, task.taskId, messageText, something)")
+  input.uploadImage(type="file")((change)="onChange($event, task.taskId)")
+  i.glyphicon.glyphicon-send.sendBtn((click)="sendMessage(task.taskId, messageText, something)")
+
+
